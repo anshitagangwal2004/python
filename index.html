@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Password Strength Checker</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script defer src="{{ url_for('static', filename='script.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center text-primary">🔐 Password Strength Checker</h2>
+
+        <!-- Password input section -->
+        <div class="row justify-content-center mt-4">
+            <div class="col-md-6">
+                <input type="password" id="password" class="form-control" placeholder="Enter your password" />
+                <div class="form-check mt-3">
+                    <input type="checkbox" class="form-check-input" id="showPassword">
+                    <label class="form-check-label" for="showPassword">Show Password</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Strength Meter -->
+        <div class="row justify-content-center mt-3">
+            <div class="col-md-6">
+                <div class="strength-meter">
+                    <div id="strengthBar" class="strength-bar"></div>
+                </div>
+                <p id="strengthLabel" class="fw-bold"></p>
+                <p id="strengthSuggestions" class="text-muted"></p>
+            </div>
+        </div>
+
+        <!-- Generate password section -->
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-6 text-center">
+                <button class="btn btn-secondary" id="generatePassword">Generate Strong Password</button>
+                <input type="text" id="generatedPassword" class="form-control mt-3" readonly placeholder="Generated Password">
+                <button class="btn btn-success mt-2" id="copyPassword">Copy to Clipboard</button>
+            </div>
+        </div>
+
+      
+    </div>
+</body>
+</html>
